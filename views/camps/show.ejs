@@ -1,0 +1,39 @@
+<%- include("../partials/header")  %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-3 mx-3">
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-secondary active">List 1</li>
+                <li class="list-group-item list-group-item-secondary">List 2</li>
+                <li class="list-group-item list-group-item-secondary">List 3</li>
+                <li class="list-group-item list-group-item-secondary">List 4</li>
+        
+            </ul>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card m-3 p-0" style="width: 100%;border: solid black 2px;">
+               <img class="card-img-top"src="<%= camp.image%>">
+               <div class="card-body">
+                    <h5 class="card-title"><%= camp.name %></h5>
+                    <p><%=  camp.description %></p>
+                </div>
+            </div>
+             <a class="btn btn-dark m-3" href="/campgrounds/<%= camp._id%>/comments/new">Add Comment</a>
+             <ul class="list-group list-group-flush">
+                <% camp.comments.forEach(function(comment){%> 
+                    <li class="list-group-item">
+                        <%=comment.text%> 
+                        <strong>- <%=comment.author%></strong>    
+                    </li>         
+                <%})%>                 
+
+             </ul>   
+           
+        </div>
+        </div>
+</div>
+
+   
+
+<%- include("../partials/footer")  %>

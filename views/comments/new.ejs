@@ -1,0 +1,35 @@
+<%- include("../partials/header")  %>
+<style>
+        .wrapper{
+                margin-top: 50px;
+                border: solid black 1px;
+                background-color: gray;
+                border-radius: 5%;
+
+        }
+        .form-custom{
+                padding: 5%;
+                font-weight: bolder;
+        }
+</style>
+        
+<div class="container col-sm-6">
+        <div class="wrapper">
+                <form class="form-custom" action="/campgrounds/<%=camp_id%>/comments" method="POST">
+                        <!-- <div class="form-group">
+                               <label>Author:</label>
+                                <input type="text" class="form-control" name="comment[author]">
+                        </div> -->
+                        <div class="form-group">
+                                <label>Comment:</label>
+                                <textarea class="form-control" name="comment[text]"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-info">Add Comment</button>         
+                </form>
+        </div>
+            
+</div>
+
+
+<%- include("../partials/footer")  %>
